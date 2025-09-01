@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditation Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; text-align: center; padding: 50px; }
+    .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 400px; margin: auto; }
+    input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; }
+    button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .output { margin-top: 20px; font-style: italic; color: #333; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🌿 Personalized Prayer/Meditation</h2>
+    <form method="POST">
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <select name="mood" required>
+        <option value="">Select your mood</option>
+        <option value="peaceful">Peaceful</option>
+        <option value="stressed">Stressed</option>
+        <option value="hopeful">Hopeful</option>
+        <option value="grateful">Grateful</option>
+      </select>
+      <button type="submit">Generate</button>
+    </form>
+    {% if meditation_text %}
+      <div class="output">
+        <h3>Your Meditation:</h3>
+        <p>{{ meditation_text }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
